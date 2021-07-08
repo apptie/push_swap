@@ -1,0 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_process_s.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jimikim <jimikim@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/03 14:52:26 by jimikim           #+#    #+#             */
+/*   Updated: 2021/07/03 14:52:53 by jimikim          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+void	ft_process_s(t_stack *target, char *flag)
+{
+	t_node	*first;
+	t_node	*second;
+
+	if (target->size < 2)
+		return ;
+	first = ft_stack_pop(target);
+	second = ft_stack_pop(target);
+	ft_stack_push(target, first);
+	ft_stack_push(target, second);
+	if (ft_strcmp(flag, "ss") != 0)
+	{
+		write(1, flag, 2);
+		write(1, "\n", 1);
+	}
+}
+
+void	ft_process_ss(t_stack *a, t_stack *b)
+{
+	ft_process_s(a, "ss");
+	ft_process_s(b, "ss");
+	write(1, "ss\n", 3);
+}
