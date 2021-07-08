@@ -6,7 +6,7 @@
 /*   By: jimikim <jimikim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 14:39:01 by jimikim           #+#    #+#             */
-/*   Updated: 2021/07/03 18:38:47 by jimikim          ###   ########.fr       */
+/*   Updated: 2021/07/08 18:25:56 by jimikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,10 @@ void	ft_check_stack(t_stack *stack)
 		while (temp)
 		{
 			if (value == temp->value)
+			{
+				ft_free_stack(stack);
 				ft_print_error();
+			}
 			temp = temp->next;
 		}
 		node = node->next;
